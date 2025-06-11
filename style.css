@@ -18,3 +18,19 @@ footer p{
     font-size: 0.6rem;
     margin-top: 0.5rem;
 }
+
+#container {
+display:flex;
+}
+
+.cartao{
+    margin: 2rem 2rem;
+    background-color: blanchedalmond;
+    height: 20rem;
+    flex-grow: 1;
+    flex-basis: calc(33% - 6rem);
+}
+
+.cartao_conteudo{
+    text-align:center;
+}
