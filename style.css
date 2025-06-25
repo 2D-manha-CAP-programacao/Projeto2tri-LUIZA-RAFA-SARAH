@@ -33,4 +33,17 @@ display:flex;
 
 .cartao_conteudo{
     text-align:center;
+    background-color: azure;
+    height: 100%;
+}
+
+.cartao_conteudo h3{
+    background-color:rgb(228, 213, 216);
+    text-align: left;
+    padding: 0.5rem;
+    position:absolute;
+    margin: 0.6rem;
+    border-radius: 0.6rem;
+    font-size: 1vw;
+    
 }
