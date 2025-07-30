@@ -69,3 +69,9 @@ display:flex;
 .cartao:hover .cartao_conteudo{
     transform:rotateY('180deg');
 }
+
+.cartao_conteudo p{
+    margin-top: 1rem;
+    padding: 2rem;
+    margin-top: 4rem;
+}
