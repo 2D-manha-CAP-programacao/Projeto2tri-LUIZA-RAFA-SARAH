@@ -54,6 +54,7 @@ display:flex;
     margin: 0.6rem;
     border-radius: 0.6rem;
     font-size: 1vw;
+    backface-visibility:hidden;
 }
 
 .cartao_conteudo_pergunta p{
@@ -82,4 +83,16 @@ display:flex;
     justify-content: space-between;
     padding: 4rem;
     gap: 3rem;
+}
+
+.cartao_conteudo_pergunta,
+.cartao_conteudo_resposta {
+backface-visibility: hidden;
+position: absolute;
+height: 100%;
+width: 100%;
+}
+
+.cartao__conteudo__resposta {
+transform: rotateY(180deg)
 }
