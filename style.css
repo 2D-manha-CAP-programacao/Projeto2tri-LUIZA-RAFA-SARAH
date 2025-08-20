@@ -1,15 +1,21 @@
+/* Importando a fonte 'Oswald' do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-:root{
-    --texto-color: #dbe4ef;
-    --card-front-color: #144480;
-    --card-back-color: #00f4bf;
-}
-body{
-background:url(./img/fundo.jpg);
- font-family: "Oswald", sans-serif;
+
+/* Definindo variáveis de cores */
+:root {
+    --texto-color: #dbe4ef;  /* Cor do texto */
+    --card-front-color: #144480; /* Cor de fundo do cartão */
+    --card-back-color: #00f4bf;  /* Cor de fundo da parte de trás do cartão */
 }
 
-footer{
+/* Estilos para o corpo da página */
+body {
+    background: url(./img/fundo.jpg);  /* Imagem de fundo */
+    font-family: "Oswald", sans-serif;  /* Usando a fonte 'Oswald' */
+}
+
+/* Estilos para o footer */
+footer {
     background-color: black;
     color: white;
     position: fixed;
@@ -18,85 +24,80 @@ footer{
     height: 2rem;
 }
 
-footer p{
+/* Estilo do texto dentro do footer */
+footer p {
     text-align: center;
     font-size: 0.6rem;
     margin-top: 0.5rem;
 }
 
+/* Estilos do container onde os cartões vão ser exibidos */
 #container {
-display:flex;
-flex-wrap: wrap;
-justify-content: space-between;
-padding: 4rem;
-gap: 3rem;
-}
-
-.cartao{
-    margin: 2rem 2rem;
-    background-color: blanchedalmond;
-    height: 20rem;
-    flex-grow: 1;
-    flex-basis: calc(33% - 6rem);
-}
-
-.cartao_conteudo{
-    text-align:center;
-    background-color: azure;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 300ms ease-in-out;
-}
-
-.cartao_conteudo h3{
-    background-color:rgb(228, 213, 216);
-    color:var(--texto-color);
-    border:1px solid var(--texto-color);
-    text-align: left;
-    padding: 0.5rem;
-    position:absolute;
-    margin: 0.6rem;
-    border-radius: 0.6rem;
-    font-size: 1vw;
-    backface-visibility:hidden;
-}
-
-.cartao_conteudo_pergunta p{
-    color: var(--texto-color);
-    font-weight: 500;
-}
-
-.cartao_conteudo_resposta p{
-    color: var(--texto-color);
-    font-weight: 700;
-}
-
-.cartao:hover .cartao_conteudo{
-    transform:rotateY('180deg');
-}
-
-.cartao_conteudo p{
-    margin-top: 1rem;
-    padding: 2rem;
-    margin-top: 4rem;
-}
-
-#container {
-    display: flex;
-    flex-wrap:wrap;
-    justify-content: space-between;
+    display: flex;  /* Flexbox para alinhar os cartões */
+    flex-wrap: wrap;  /* Permite que os cartões quebrem linha se necessário */
+    justify-content: space-between;  /* Espaçamento entre os cartões */
     padding: 4rem;
     gap: 3rem;
 }
 
-.cartao_conteudo_pergunta,
-.cartao_conteudo_resposta {
-backface-visibility: hidden;
-position: absolute;
-height: 100%;
-width: 100%;
+/* Estilos para cada cartão */
+.cartao {
+    margin: 2rem 2rem;  /* Espaço ao redor de cada cartão */
+    background-color: blanchedalmond;  /* Cor de fundo do cartão */
+    height: 20rem;  /* Altura do cartão */
+    flex-grow: 1;  /* Faz com que os cartões cresçam para preencher o espaço disponível */
+    flex-basis: calc(33% - 6rem);  /* Cartões ocupam 1/3 da largura do container */
+    perspective: 1000px;  /* Adiciona perspectiva para o efeito de flip */
 }
 
-.cartao__conteudo__resposta {
-transform: rotateY(180deg)
+/* Estilos para o conteúdo dentro do cartão */
+.cartao_conteudo {
+    text-align: center;  /* Alinha o texto ao centro */
+    background-color: azure;  /* Cor de fundo do conteúdo do cartão */
+    height: 100%;  /* Ocupa toda a altura do cartão */
+    transform-style: preserve-3d;  /* Mantém os elementos 3D durante a rotação */
+    transition: transform 300ms ease-in-out;  /* Suaviza a transição do efeito de flip */
+    position: relative;  /* Necessário para o posicionamento absoluto das partes internas */
 }
+
+/* Estilo do título (h3) dentro do cartão */
+.cartao_conteudo h3 {
+    background-color: rgb(228, 213, 216);  /* Cor de fundo do título */
+    color: var(--texto-color);  /* Cor do texto definida na variável */
+    border: 1px solid var(--texto-color);  /* Borda ao redor do título */
+    text-align: left;  /* Alinha o título à esquerda */
+    padding: 0.5rem;  /* Espaçamento interno */
+    position: absolute;  /* Posiciona o título de forma absoluta */
+    margin: 0.6rem;  /* Espaçamento ao redor do título */
+    border-radius: 0.6rem;  /* Bordas arredondadas */
+    font-size: 1vw;  /* Tamanho da fonte em relação à largura da tela */
+    backface-visibility: hidden;  /* Esconde o título quando o cartão é virado */
+}
+
+/* Estilos para o conteúdo de pergunta e resposta dentro do cartão */
+.cartao_conteudo_pergunta p,
+.cartao_conteudo_resposta p {
+    color: var(--texto-color);  /* Cor do texto */
+    font-weight: 500;  /* Peso da fonte para as perguntas */
+}
+
+/* Estilo específico para a resposta */
+.cartao_conteudo_resposta p {
+    font-weight: 700;  /* Peso da fonte mais forte para a resposta */
+}
+
+/* Efeito de hover: ao passar o mouse sobre o cartão, ele vira */
+.cartao:hover .cartao_conteudo {
+    transform: rotateY(180deg);  /* Roda o conteúdo do cartão no eixo Y */
+}
+
+/* Estilos do parágrafo dentro do conteúdo do cartão */
+.cartao_conteudo p {
+    margin-top: 1rem;
+    padding: 2rem;
+}
+
+/* Estilos para as partes de pergunta e resposta */
+.cartao_conteudo_pergunta,
+.cartao_conteudo_resposta {
+    backface-visibility: hidden;  /* Esconde o conteúdo ao se*
