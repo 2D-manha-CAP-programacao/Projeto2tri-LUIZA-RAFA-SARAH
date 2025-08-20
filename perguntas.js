@@ -9,11 +9,13 @@ criaCartao(
     "O que é o Javascript";
     "O JavaScript é uma linguagem de programação";
 )
+
 criaCartao(
     "Geografia";
-    "Qual a capital da França?";"
+    "Qual a capital da França?";
     "A capital da França é Paris";
 )
+
 criaCartao(
     "Programação";
     "O que é uma função?";
